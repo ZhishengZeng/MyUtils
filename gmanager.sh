@@ -36,6 +36,6 @@ REPO=$1
 temp=${REPO##*/}
 REPO_NAME=${temp%%\.*}   
 
-CHECK_DIR $EXE_PATH/$REPO_NAME || RUN git clone --recursive $REPO $EXE_PATH/$REPO_NAME
+CHECK_DIR $EXE_PATH/$REPO_NAME || RUN git clone $REPO $EXE_PATH/$REPO_NAME
 RUN cd $EXE_PATH/$REPO_NAME
 RUN git submodule update --init --recursive
